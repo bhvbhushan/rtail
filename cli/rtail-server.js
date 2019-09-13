@@ -95,7 +95,7 @@ socket.on('message', function (data, remote) {
   }
 
   // limit backlog to 100 lines
-  streams[data.id].length >= 100 && streams[data.id].shift()
+  streams[data.id].length >= 500 && streams[data.id].shift()
   streams[data.id].push(message)
 
   debug(JSON.stringify(message))
